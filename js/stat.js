@@ -1,5 +1,6 @@
 var renderCloud = function(ctx, cloudTopLeftX, cloudTopLeftY, cloudBottomRightX, cloudBottomRightY, color) {
   ctx.fillStyle = color;
+  ctx.strokeStyle = color;
   ctx.beginPath();
   ctx.moveTo(cloudTopLeftX, cloudTopLeftY);
   ctx.lineTo(cloudBottomRightX, cloudTopLeftY );
@@ -9,8 +10,7 @@ var renderCloud = function(ctx, cloudTopLeftX, cloudTopLeftY, cloudBottomRightX,
   ctx.lineTo(cloudTopLeftX + 50, (cloudTopLeftY + cloudBottomRightY)/2);
   ctx.closePath();
   ctx.stroke();
+  ctx.fill();
 }
 
-window.renderStatistics = function(ctx) {
 
-}
