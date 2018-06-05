@@ -20,4 +20,22 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.fillStyle = "#000"
   ctx.fillText('Ура вы победили!', 150, 30);
   ctx.fillText('Список результатов:',150, 60);
+
+  ctx.fillStyle = '#000';
+  var maxTime = 0;
+
+  for (var i = 0; i < times.length; i++) {
+    if (times[i] > maxTime) {
+      maxTime = times[i];
+    }
+  }
+
+  for (var i = 0; i < names.length; i++) {
+    var x = 160 + 90*i;
+    var y = 270 - 150 * times[i] / maxTime;
+    var width = 40;
+    var height = 150 * times[i] / maxTime;
+    ctx.fillRect(x, y, width, height);
+
+  }
 }
