@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var renderCloud = function (ctx, cloudTopLeftX, cloudTopLeftY, cloudBottomRightX, cloudBottomRightY, color) {
   ctx.fillStyle = color;
   ctx.strokeStyle = color;
