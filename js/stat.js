@@ -1,4 +1,16 @@
 'use strict';
+var LEFT_TOP_X = 110;
+var LEFT_TOP_Y = 20;
+var RIGHT_BOTTOM_X = 630;
+var RIGHT_BOTTOM_Y = 290;
+var TEXT_START_X = 150;
+var TEXT_START_Y = 30;
+var COLUMN_X = 160;
+var COLUMN_Y = 250;
+var DISTANCE = 50;
+var COLUMN_WIDTH = 40;
+var COLUMN_MAX_HEIGHT = 150;
+
 var renderCloud = function (ctx, cloudTopLeftX, cloudTopLeftY, cloudBottomRightX, cloudBottomRightY, color) {
   ctx.fillStyle = color;
   ctx.strokeStyle = color;
@@ -14,17 +26,6 @@ var renderCloud = function (ctx, cloudTopLeftX, cloudTopLeftY, cloudBottomRightX
   ctx.fill();
 };
 
-var LEFT_TOP_X = 110;
-var LEFT_TOP_Y = 20;
-var RIGHT_BOTTOM_X = 630;
-var RIGHT_BOTTOM_Y = 290;
-var TEXT_START_X = 150;
-var TEXT_START_Y = 30;
-var COLUMN_X = 160;
-var COLUMN_Y = 250;
-var DISTANCE = 50;
-var COLUMN_WIDTH = 40;
-var COLUMN_MAX_HEIGHT = 150;
 
 var chooseMax = function (times) {
   var maxTime = 0;
@@ -46,7 +47,6 @@ var renderHistogram = function (ctx, times, names, maxTime) {
     ctx.fillRect(x, y, COLUMN_WIDTH, height);
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], x, COLUMN_Y + 20);
-
   }
 };
 
@@ -60,5 +60,4 @@ window.renderStatistics = function (ctx, names, times) {
 
   var maxTime = chooseMax(times);
   renderHistogram(ctx, times, names, maxTime);
-
 };
