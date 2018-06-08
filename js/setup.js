@@ -43,4 +43,8 @@ eyesColors = [
   'green'
 ];
 
+var getRandomIndex = function (arrayLength) {
+  return Math.floor(Math.random() * arrayLength);
+};
+
 
