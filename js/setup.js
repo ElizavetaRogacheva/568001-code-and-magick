@@ -47,4 +47,18 @@ var getRandomIndex = function (arrayLength) {
   return Math.floor(Math.random() * arrayLength);
 };
 
+var makePlayer = function () {
+  var nameIndex = getRandomIndex(wizardNames.length);
+  var surnameIndex = getRandomIndex(wizardSurnames.length);
+  var coatColorIndex = getRandomIndex(coatColors.length);
+  var eyesColorIndex = getRandomIndex(eyesColors.length);
+  var player = {
+    name: wizardNames[nameIndex] + wizardSurnames[surnameIndex],
+    coatColor: coatColors[coatColorIndex],
+    eyesColor: eyesColors[eyesColorIndex]
+  };
+  return player;
+};
+
+
 
