@@ -71,5 +71,10 @@ var makeArrayOfWizards = function (numOfWizards) {
 
 var wizards = makeArrayOfWizards(4);
 
+var setupSimilar = document.querySelector('.setup-similar');
+setupSimilar.classList.remove('hidden');
+var setupSimilarList = document.querySelector('.setup-similar-list');
+var setupSimilarTemplate = document.querySelector('.similar-wizard-template');
+
 
 
