@@ -35,7 +35,7 @@ var coatColors = [
 
 ];
 
-eyesColors = [
+var eyesColors = [
   'black',
   'red',
   'blue',
@@ -53,12 +53,23 @@ var makePlayer = function () {
   var coatColorIndex = getRandomIndex(coatColors.length);
   var eyesColorIndex = getRandomIndex(eyesColors.length);
   var player = {
-    name: wizardNames[nameIndex] + wizardSurnames[surnameIndex],
+    name: wizardNames[nameIndex] + ' ' + wizardSurnames[surnameIndex],
     coatColor: coatColors[coatColorIndex],
     eyesColor: eyesColors[eyesColorIndex]
   };
   return player;
 };
+
+var makeArrayOfWizards = function (numOfWizards) {
+  var wizards = [];
+  for (var i = 0; i < numOfWizards; i++) {
+    wizards[i] = makePlayer();
+  }
+  console.log(wizards);
+  return wizards;
+};
+
+var wizards = makeArrayOfWizards(4);
 
 
 
